@@ -1,4 +1,4 @@
-<?php  include 'includes/autoloader.inc.php' ?>
+<?php  include 'includes/class-autoloader.inc.php' ?>
 
 
 <!DOCTYPE html>
@@ -13,7 +13,12 @@
     <div class="container">
         <div class="main">
             <center>
-            
+                <?php 
+                    $testObj = new Test();
+                    $testObj->setUsersStmt("Muela");
+                    $testObj-> getUsers();
+                
+                ?>
             </center>
         </div>
     </div>
