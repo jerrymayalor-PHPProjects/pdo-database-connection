@@ -9,13 +9,13 @@ class  Dbh {
     private $dbName = "oop_db";
 
 
-    // For Procedural PHP
+    // PROTECTED METHOD
     protected function connect(){
-        $this->servername = "localhost";
-        $this->username = "root";
-        $this->password = "";
-        $this->dbname = "oop_db";
+       $dsn = 'mysql:host=' . $this->host . ';dbname=' . $this->dbName;
+       $pdo = new PDO( $dsn, $this->username, $this->password );
+       $pdo->setAttribute( PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
+       return $pdo;
     }
 
 }
